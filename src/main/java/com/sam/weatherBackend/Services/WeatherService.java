@@ -37,11 +37,11 @@ public class WeatherService {
                 // otherwise pull from OpenWeather Endpoint and save in repo
                 Weather response = makeWeatherHTTPRequest(city);
                 repo.save(response);
-                return response.city;
+                return response.id;
 
             } else {
                 System.out.println("Does exist in H2");
-                return retreavedWeather.get(0).city;
+                return retreavedWeather.get(0).id;
             }
         } else {
             return "Error :(, either you have exceeded the API usage limit or the key is invalid.";

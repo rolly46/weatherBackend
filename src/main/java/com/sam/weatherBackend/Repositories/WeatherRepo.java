@@ -10,7 +10,6 @@ import com.sam.weatherBackend.Models.Weather;
 @Repository
 public interface WeatherRepo extends JpaRepository<Weather, String> {
 
-    @Query("SELECT u FROM Weather u WHERE u.city = city")
      public List<Weather> findByCity(String city);
     
 }
